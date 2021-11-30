@@ -29,6 +29,26 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <div className="App">
+      <header className="App-header">
+        Start your WebCam
+      </header>
+      <span>
+        <h3>Local</h3>
+        <video id="webcamVideo" autoPlay playsInline></video>
+      </span>
+      <span>
+        <h3>Remote</h3>
+        <video id="remoteVideo" autoPlay playsInline></video>
+      </span>
+      <button id="webcamBtn">Start webcam</button>
+      <h2>Create a new call</h2>
+      <button id="callButton" disabled>Call</button>
+      <h2>Join a call</h2>
+      <input id="callInput" />
+      <button id="answerBtn" disabled>Answer</button>
+      <button id="hangupBtn">Hangup</button>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
