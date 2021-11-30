@@ -64,13 +64,12 @@ webcamBtn.onclick = async () => {
 }
 
 callButton.onclick = async () => {
-
-  const callDoc = firestore.Collection('calls').doc();
-  const offerCandidates = firestore.Collection('offerCandidates').doc();
-  const answerCandidates = firestore.Collection('answerCandidates').doc();
+  const callDoc = firestore.collection('calls').doc();
+  const offerCandidates = firestore.collection('offerCandidates').doc();
+  const answerCandidates = firestore.collection('answerCandidates').doc();
   callInput.value = callDoc.id;
   
-  pc.onicecandidate = event => {
+  pc.onicecandidate = (event) => {
     event.candidate && offerCandidates.add(event.candidate.toJSON());
   }
 
