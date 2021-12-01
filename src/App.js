@@ -102,7 +102,7 @@ callButton.onclick = async () => {
 answerBtn.onclick = async () => {
   const callId = callInput.value;
   const callDoc = firestore.collection('calls').doc(callId)
-  const answerCandidates = firestore.Collection('answerCandidates');
+  const answerCandidates = firestore.collection('answerCandidates');
   const offerCandidates = callDoc.collection('offerCandidates');
   pc.onicecandidate = (event) => {
     event.candidate && answerCandidates.add(event.candidate.toJSON());
