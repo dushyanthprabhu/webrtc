@@ -12,38 +12,93 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-/* video {
+.Main {
+  overflow: hidden;
+}
+.header {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+.btn {
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 5%;
+  margin: 5px;
+}
+.App {
   width: 40vw;
-  height: 30vw;
-  margin: 2rem;
-  background: #2c3e50;
-} */
-
-.localvideo {
-  bottom: 100px;
-  width: 40vw;
-  height: 30vw;
-  margin: 2rem;
-  background: #2c3e50;
+  height: 40vw;
+  position: relative;
+  float: left;
+  overflow: hidden;
+}
+.localCam {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.remoteCam {
+  z-index: -1;
+  margin: 0px;
 }
 .remotevideo {
-  right: 10px;
-  width: 15vw;
-  height: 10vw;
+  width: 40vw;
+  height: 30vw;
   margin: 2rem;
   background: #2c3e50;
 }
+.localvideo {
+  width: 10vw;
+  height: 10vw;
+  margin: 2rem;
+  background: white;
+}
+video {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+}
+.Call1 {
+  left: 40vw;
+  width: 50%;
+  margin: 10px;
+  margin-top: 30px;
+  position: absolute;
+  overflow: hidden;
+}
+.Call {
+  left: 40vw;
+  top: 20vw;
+  width: 50%;
+  margin-left: 10px;
+  position: absolute;
+}
+.CallHead {
+}
+/* .App-header {
+  font-size: 100px;
+}
+
 .remote {
   margin-top: -210px;
   margin-left: 340px;
 }
 
-video {
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg); /* Safari and Chrome */
-  -moz-transform: rotateY(180deg); /* Firefox */
-}
 
-button {
-  size: 20%;
+
+.Call {
+  margin-left: 100px;
 }
+button {
+  width: 30%;
+}
+.call2 {
+  position: absolute;
+  margin-top: inherit;
+  display: table;
+  width: 15%;
+} */

@@ -135,12 +135,13 @@ answerBtn.onclick = async () => {
 
 }
 hangupBtn.onclick = async() =>{
-  // const tracks = localStream.getTracks();
-  // tracks.forEach(function(track) {
-  //   track.stop();
-  // });
+  const stream = webcamvideo.srcObject;
+  const tracks = stream.getTracks();
 
-  remoteVideo.srcObject = null;
+  tracks.forEach(function(track) {
+    track.stop();
+  });
+  webcamvideo.srcObject = null;
   callButton.disabled = false;
 }
 function App() {
