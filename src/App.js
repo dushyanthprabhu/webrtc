@@ -40,7 +40,7 @@ const callButton = document.getElementById("callButton");
 const callInput = document.getElementById("callInput");
 const answerBtn = document.getElementById("answerBtn");
 const remoteVideo = document.getElementById("remoteVideo");
-//const hangupBtn = document.getElementById("hangupBtn");
+const hangupBtn = document.getElementById("hangupBtn");
 
 webcamBtn.onclick = async () => {
   localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
@@ -134,7 +134,15 @@ answerBtn.onclick = async () => {
   });
 
 }
+hangupBtn.onclick = async() =>{
+  // const tracks = localStream.getTracks();
+  // tracks.forEach(function(track) {
+  //   track.stop();
+  // });
 
+  remoteVideo.srcObject = null;
+  callButton.disabled = false;
+}
 function App() {
   return (
     <div></div>
