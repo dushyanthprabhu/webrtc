@@ -65,8 +65,8 @@ webcamBtn.onclick = async () => {
 
 callButton.onclick = async () => {
   const callDoc = firestore.collection('calls').doc();
-  const offerCandidates = firestore.collection('offerCandidates').doc();
-  const answerCandidates = firestore.collection('answerCandidates').doc();
+  const offerCandidates = firestore.collection('offerCandidates');
+  const answerCandidates = firestore.collection('answerCandidates');
   callInput.value = callDoc.id;
   
   pc.onicecandidate = (event) => {
@@ -102,9 +102,9 @@ callButton.onclick = async () => {
 answerBtn.onclick = async () => {
   const callId = callInput.value;
   const callDoc = firestore.collection('calls').doc(callId)
-  const answerCandidates = firestore.Collection('answerCandidates').doc();
+  const answerCandidates = firestore.Collection('answerCandidates');
   const offerCandidates = callDoc.collection('offerCandidates');
-  pc.onicecandidate = event => {
+  pc.onicecandidate = (event) => {
     event.candidate && answerCandidates.add(event.candidate.toJSON());
   }
 
